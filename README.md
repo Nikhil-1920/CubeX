@@ -1,2 +1,2 @@
-# CubeX
-A Pocket Cube Solver
+# CubeX: A Pocket Cube Solver
+
