@@ -64,7 +64,7 @@ class RubiksConfiguration {
 	}
 
     
-    public static int[] inversePermutation(int P[]) {
+    	public static int[] inversePermutation(int P[]) {
 
 		int pLength = P.length;
 		int Pi[] = new int[pLength];
