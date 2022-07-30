@@ -88,7 +88,7 @@ class RubiksConfiguration {
     
 	private void addBasicMove(String name, int P[], HashMap<String, RubiksConfiguration> moves) {
 
-	    RubiksConfiguration config = new RubiksConfiguration(regularPermutation(P));
+		RubiksConfiguration config = new RubiksConfiguration(regularPermutation(P));
 		moves.put(name, config);
 	}
 
@@ -101,44 +101,44 @@ class RubiksConfiguration {
 		for(String move : moves) {
 
 			switch(move) {
-			    case "F":
+				case "F":
 				    positions = regularPermutation(F);
 				    break;
 
-                case "F'":
-                    positions = regularPermutation(Fi);
-                    break;
+				case "F'":
+				    positions = regularPermutation(Fi);
+				    break;
 
-                case "F2":
-                    positions = regularPermutation(F);
-                    positions = regularPermutation(F);
-                    break;
+				case "F2":
+				    positions = regularPermutation(F);
+				    positions = regularPermutation(F);
+				    break;
 
-                case "U":
-                    positions = regularPermutation(U);
-                    break;
+				case "U":
+				    positions = regularPermutation(U);
+				    break;
 
-                case "U'":
-                    positions = regularPermutation(Ui);
-                    break;
+				case "U'":
+				    positions = regularPermutation(Ui);
+				    break;
 
-                case "U2":
-                    positions = regularPermutation(U);
-                    positions = regularPermutation(U);
-                    break;
+				case "U2":
+				    positions = regularPermutation(U);
+				    positions = regularPermutation(U);
+				    break;
 
-                case "R":
-                    positions = regularPermutation(R);
-                    break;
+				case "R":
+				    positions = regularPermutation(R);
+				    break;
 
-                case "R'":
-                    positions = regularPermutation(Ri);
-                    break;
+				case "R'":
+				    positions = regularPermutation(Ri);
+				    break;
 
-                case "R2":
-                    positions = regularPermutation(R);
-                    positions = regularPermutation(R);
-                    break;
+				case "R2":
+				    positions = regularPermutation(R);
+				    positions = regularPermutation(R);
+				    break;
 			}
 		}
 	}
@@ -146,12 +146,13 @@ class RubiksConfiguration {
     
 	public int getRandomWithExclusion(Random rand, int start, int end, int... exclude) {
 
-	    int random = start + rand.nextInt(end - start + 1 - exclude.length);
-	    for(int idx : exclude) {
+	int random = start + rand.nextInt(end - start + 1 - exclude.length);
+		for(int idx : exclude) {
 
 	        if(random < idx) { break; }
 	        random++;
 	    }
+		
 	    return random;
 	}
 	
