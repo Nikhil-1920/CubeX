@@ -18,7 +18,7 @@ class RubiksNet extends JPanel implements Renderable {
 	
 	public RubiksNet(RubiksConfiguration state) {
 
-	    this.state = state;
+		this.state = state;
 		this.addMouseListener(mouseInput);
 		this.setBackground(new Color(30, 30, 30));
 		this.setLayout(null);
@@ -34,7 +34,7 @@ class RubiksNet extends JPanel implements Renderable {
 	    cubelets.add(drawCubelet(graphics, 2, 380, 190));
 	    cubelets.add(drawCubelet(graphics, 3, 290, 190));
         
-        // drawing left cubelet
+		// drawing left cubelet
 	    cubelets.add(drawCubelet(graphics, 4, 100, 290));
 	    cubelets.add(drawCubelet(graphics, 5, 190, 290));
 	    cubelets.add(drawCubelet(graphics, 6, 190, 380));
