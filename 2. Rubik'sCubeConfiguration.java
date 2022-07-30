@@ -147,33 +147,34 @@ class RubiksConfiguration {
 	public int getRandomWithExclusion(Random rand, int start, int end, int... exclude) {
 
 	int random = start + rand.nextInt(end - start + 1 - exclude.length);
+		
 		for(int idx : exclude) {
 
-	        if(random < idx) { break; }
-	        random++;
-	    }
+			if(random < idx) { break; }
+	        	random++;
+	    	}
 		
-	    return random;
+		return random;
 	}
 	
 
 	public String randomize() {
 
 		Random rand = new Random();
-	    String scramble = "";
-	    int previousMove = -1;
-	    String moves[][] = { {"F", "F'", "F2"}, {"U", "U'", "U2"}, {"R", "R'", "R2"} };	  
+		String scramble = "";
+		int previousMove = -1;
+		String moves[][] = { {"F", "F'", "F2"}, {"U", "U'", "U2"}, {"R", "R'", "R2"} };	  
 
-	    for(int i = 0; i < 17; i++) {
+		for(int i = 0; i < 17; i++) {
 
-	        previousMove = getRandomWithExclusion(rand, 0, moves.length - 1, previousMove);
-	        String shift = moves[previousMove][rand.nextInt(moves[0].length)];
-	        scramble += shift + " ";
-	    }
+			previousMove = getRandomWithExclusion(rand, 0, moves.length - 1, previousMove);
+			String shift = moves[previousMove][rand.nextInt(moves[0].length)];
+			scramble += shift + " ";
+		}
 	    
-	    scramble = scramble.substring(0, scramble.length() - 2);
-	    moveInSequence(scramble);
-	    return scramble;
+		scramble = scramble.substring(0, scramble.length() - 2);
+		moveInSequence(scramble);
+		return scramble;
 	}
 
 
