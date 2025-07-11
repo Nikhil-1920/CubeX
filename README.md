@@ -1,7 +1,7 @@
 # 🎲 CubeX: Master the 2x2 Cube with Ease
 
 <div align="center">
-  <img src="images/cubex_logo.jpg" alt="CubeX Logo" width="200"/>
+  <img src="Images/cubex_logo.jpg" alt="CubeX Logo" width="200"/>
   <p><em>The Ultimate 2x2x2 Rubik's Cube Solver</em></p>
 </div>
 
