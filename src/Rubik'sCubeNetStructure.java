@@ -40,40 +40,39 @@ class RubiksNet extends JPanel implements Renderable {
 	    cubelets.add(drawCubelet(graphics, 6, 190, 380));
 	    cubelets.add(drawCubelet(graphics, 7, 100, 380));
         
-            // drawing front cubelet
+        // drawing front cubelet
 	    cubelets.add(drawCubelet(graphics, 8, 290, 290));
 	    cubelets.add(drawCubelet(graphics, 9, 380, 290));
 	    cubelets.add(drawCubelet(graphics, 10, 380, 380));
 	    cubelets.add(drawCubelet(graphics, 11, 290, 380));
         
-            // drawing right cubelet
+        // drawing right cubelet
 	    cubelets.add(drawCubelet(graphics, 12, 480, 290));
 	    cubelets.add(drawCubelet(graphics, 13, 570, 290));
 	    cubelets.add(drawCubelet(graphics, 14, 570, 380));
 	    cubelets.add(drawCubelet(graphics, 15, 480, 380));
         
-            // drawing bottom cubelet
+        // drawing bottom cubelet
 	    cubelets.add(drawCubelet(graphics, 16, 290, 480));
 	    cubelets.add(drawCubelet(graphics, 17, 380, 480));
 	    cubelets.add(drawCubelet(graphics, 18, 380, 570));
 	    cubelets.add(drawCubelet(graphics, 19, 290, 570));
     
-            // drawing back cubelet
+        // drawing back cubelet
 	    cubelets.add(drawCubelet(graphics, 20, 670, 290));
 	    cubelets.add(drawCubelet(graphics, 21, 760, 290));
 	    cubelets.add(drawCubelet(graphics, 22, 760, 380));
 	    cubelets.add(drawCubelet(graphics, 23, 670, 380));
 	}
-		
-
+	
 	private RubikCubelet drawCubelet(Graphics2D graphics, int idx, int X, int Y) {
 
 		int color = -1;
-	    	char opts = state.positions[idx];
+	    char opts = state.positions[idx];
 
 		switch(opts) {
 				
-		    	case 'w':
+		    case 'w':
 				color = 0;
 				graphics.setColor(Color.WHITE);
 				break;
@@ -83,34 +82,33 @@ class RubiksNet extends JPanel implements Renderable {
 				graphics.setColor(Color.GREEN);
 				break;
 
-		    	case 'o':
+		    case 'o':
 				color = 2;
 				graphics.setColor(new Color(255, 125, 0));
 				break;
 
-		    	case 'r':
+		    case 'r':
 				color = 3;
 				graphics.setColor(Color.RED);
 				break;
 
-		    	case 'y':
+		    case 'y':
 				color = 4;
 				graphics.setColor(Color.YELLOW);
 				break;
 
-		    	case 'b':
+		    case 'b':
 				color = 5;
 				graphics.setColor(Color.BLUE);
 				break;
-		  }
+		}
 		
-		  graphics.fillRect(X, Y, CUBELET_SIZE, CUBELET_SIZE);
-		  graphics.setColor(Color.BLACK);
-		  graphics.setStroke(new BasicStroke(4));
-		  graphics.drawRect(X, Y, CUBELET_SIZE, CUBELET_SIZE);
-		  return new RubikCubelet(idx, X, Y, color);
-    	}
-  
+		graphics.fillRect(X, Y, CUBELET_SIZE, CUBELET_SIZE);
+		graphics.setColor(Color.BLACK);
+		graphics.setStroke(new BasicStroke(4));
+		graphics.drawRect(X, Y, CUBELET_SIZE, CUBELET_SIZE);
+		return new RubikCubelet(idx, X, Y, color);
+    }
   
 	MouseListener mouseInput = new MouseListener() {
 
@@ -122,13 +120,13 @@ class RubiksNet extends JPanel implements Renderable {
 
 		    for(RubikCubelet cubelet : cubelets) {
 
-			if(X >= cubelet.netX && X <= cubelet.netX + CUBELET_SIZE && Y >= cubelet.netY && Y <= cubelet.netY + CUBELET_SIZE) {
+				if(X >= cubelet.netX && X <= cubelet.netX + CUBELET_SIZE && Y >= cubelet.netY && Y <= cubelet.netY + CUBELET_SIZE) {
 
-			    state.positions[cubelet.stateIndex] = cubelet.colorCycle();
-			    RubiksNet.this.repaint();
-			}
+					state.positions[cubelet.stateIndex] = cubelet.colorCycle();
+					RubiksNet.this.repaint();
+				}
 		    }
-        	}
+        }
 
 		@Override
 		public void mousePressed(MouseEvent event)  { }

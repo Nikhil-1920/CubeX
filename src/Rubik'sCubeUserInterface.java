@@ -13,12 +13,11 @@ class RubiksCubeUI extends JFrame {
 
 	private RubiksNet rubiksnet = new RubiksNet(new RubiksConfiguration());
 	private JButton   solveBtn  = new JButton("SOLVE");
-    	private JButton   resetBtn  = new JButton("RESET");
+    private JButton   resetBtn  = new JButton("RESET");
 	private JButton   randomizeBtn = new JButton("RANDOM");
 	private JLabel    solution = new JLabel(), time = new JLabel();
 	private JLabel    scramble = new JLabel();
 	
-
 	public RubiksCubeUI() {
 
 		this.setContentPane(rubiksnet);
@@ -27,7 +26,6 @@ class RubiksCubeUI extends JFrame {
 		this.setVisible(true);
 	}
 	
-    
 	private void buildFrames() {
 
 		this.setTitle("CubeX");
@@ -37,18 +35,17 @@ class RubiksCubeUI extends JFrame {
 		this.requestFocus();
 	}
 	
-
 	private void addComponents() {
 
 		solveBtn.setFont(new Font("SF Pro Display", Font.BOLD, 18));
-        	solveBtn.setForeground(new Color(255, 240, 245));
+        solveBtn.setForeground(new Color(255, 240, 245));
 		solveBtn.setBackground(new Color(220, 20, 60));
 		solveBtn.setBorder(new LineBorder(new Color(220, 20, 60).darker().darker(), 3));
 		solveBtn.addMouseListener(solveBtnListener);
 		solveBtn.setFocusable(false);
 		solveBtn.setSize(100, 38);
 		solveBtn.setLocation(480, 100);
-        	solveBtn.setOpaque(false);
+        solveBtn.setOpaque(false);
       
 		randomizeBtn.setFont(new Font("SF Pro Display", Font.BOLD, 18));
 		randomizeBtn.setForeground(new Color(255, 240, 245));
@@ -61,7 +58,7 @@ class RubiksCubeUI extends JFrame {
 		randomizeBtn.setOpaque(false);
       
 		resetBtn.setFont(new Font("SF Pro Display", Font.BOLD, 18));
-        	resetBtn.setForeground(new Color(255, 240, 245));
+        resetBtn.setForeground(new Color(255, 240, 245));
 		resetBtn.setBackground(new Color(220, 20, 60));
 		resetBtn.setBorder(new LineBorder(new Color(220, 20, 60).darker().darker(), 3));
 		resetBtn.addMouseListener(resetBtnListener);
@@ -93,8 +90,7 @@ class RubiksCubeUI extends JFrame {
 		rubiksnet.add(time);
 	}
 	
-
-    	MouseListener solveBtnListener = new MouseListener() {
+    MouseListener solveBtnListener = new MouseListener() {
 
 		@Override
 		public void mouseClicked(MouseEvent event) { }
@@ -110,7 +106,7 @@ class RubiksCubeUI extends JFrame {
 		    time.setText("TIME ELAPSED:  " + (System.currentTimeMillis() - startTime) + "ms.");
 		    rubiksnet.state.moveInSequence(solution.getText());
 		    rubiksnet.repaint();
-        	}
+        }
 
 		@Override
 		public void mouseEntered(MouseEvent event) {
@@ -123,8 +119,7 @@ class RubiksCubeUI extends JFrame {
 		}
 	};
 	
-
-    	MouseListener randomBtnListener = new MouseListener() {
+    MouseListener randomBtnListener = new MouseListener() {
 
 		@Override
 		public void mouseClicked(MouseEvent event) { }
@@ -150,10 +145,9 @@ class RubiksCubeUI extends JFrame {
 		public void mouseExited(MouseEvent event) {
 		    randomizeBtn.setBackground(new Color(220, 20, 60));
 		}
-    	};
+    };
 
-
-    	MouseListener resetBtnListener = new MouseListener() {
+    MouseListener resetBtnListener = new MouseListener() {
 
 		@Override
 		public void mouseClicked(MouseEvent event) { }
@@ -180,5 +174,5 @@ class RubiksCubeUI extends JFrame {
 		public void mouseExited(MouseEvent event) {
 		    resetBtn.setBackground(new Color(220, 20, 60));
 		}
-    	};
+    };
 }

@@ -30,14 +30,12 @@ class RubiksConfiguration {
 		this.isNull = false;
 	}
 		
-    
 	public RubiksConfiguration(char positions[]) {
 
 		this.positions = positions;
 		this.isNull = false;
 	}
 	
-    
 	public RubiksConfiguration(boolean nullConfig) { this.isNull = nullConfig; }
 	
 	// Rubik's Cube Moves Notations
@@ -55,7 +53,6 @@ class RubiksConfiguration {
 	private static int[] R  = {0, 9, 10, 3, 4, 5, 6, 7, 8, 17, 18, 11, 15, 12, 13, 14, 16, 23, 20, 19, 2, 21, 22, 1};
 	private static int[] Ri = inversePermutation(R);
 
-    
 	public char[] regularPermutation(int P[]) {
 
 		char newPositions[] = new char[24];
@@ -63,8 +60,7 @@ class RubiksConfiguration {
 		return newPositions;
 	}
 
-    
-    	public static int[] inversePermutation(int P[]) {
+    public static int[] inversePermutation(int P[]) {
 
 		int pLength = P.length;
 		int Pi[] = new int[pLength];
@@ -72,7 +68,6 @@ class RubiksConfiguration {
 		return Pi;
 	}
 
-    
 	public HashMap<String, RubiksConfiguration> getReachableStates() {
 
 		HashMap<String, RubiksConfiguration> moves = new HashMap<>();
@@ -85,14 +80,12 @@ class RubiksConfiguration {
 		return moves;
 	}
 	
-    
 	private void addBasicMove(String name, int P[], HashMap<String, RubiksConfiguration> moves) {
 
 		RubiksConfiguration config = new RubiksConfiguration(regularPermutation(P));
 		moves.put(name, config);
 	}
 
-    
 	public void moveInSequence(String sequence) {
 
 		if(sequence == null) return;
@@ -142,22 +135,17 @@ class RubiksConfiguration {
 			}
 		}
 	}
-		
     
 	public int getRandomWithExclusion(Random rand, int start, int end, int... exclude) {
-
-	int random = start + rand.nextInt(end - start + 1 - exclude.length);
+		int random = start + rand.nextInt(end - start + 1 - exclude.length);
 		
 		for(int idx : exclude) {
-
 			if(random < idx) { break; }
-	        	random++;
-	    	}
-		
+	        random++;
+	    }
 		return random;
 	}
 	
-
 	public String randomize() {
 
 		Random rand = new Random();
@@ -177,11 +165,9 @@ class RubiksConfiguration {
 		return scramble;
 	}
 
-
 	@Override
 	public int hashCode() { return Arrays.toString(this.positions).hashCode(); }
 
-		
 	@Override
 	public boolean equals(Object object) {
 
@@ -191,10 +177,8 @@ class RubiksConfiguration {
 		if(config.positions.length != this.positions.length) { return false; }
 
 		for(int i = 0; i < this.positions.length; i++) {
-
 			if(this.positions[i] != config.positions[i]) { return false; }
 		}
-
 		return true;
 	}
 }

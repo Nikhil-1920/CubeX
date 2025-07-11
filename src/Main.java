@@ -8,7 +8,7 @@ public class Main {
 	public static final int GODS_NUMBER = 14;
 	public static void main(String[] args) { new RubiksCubeUI(); }
 	
-    	// Implementing a 2-way Breadth-First-Search (BFS) on the RubiksConfiguration 
+    // Implementing a 2-way Breadth-First-Search (BFS) on the RubiksConfiguration 
 	// Implicit graph returns the shortest path which is under 20-moves
 	// Diameter for (2x2x2 Rubik's Cube) is God Number = 14
 
@@ -52,42 +52,42 @@ public class Main {
 	            }
 	            
 	            src = bqueue.remove();
+
 	            for(Entry<String, RubiksConfiguration> move : src.getReachableStates().entrySet()) {
 
-			if(!bdParents.containsKey(move.getValue())) {
+					if(!bdParents.containsKey(move.getValue())) {
 
-			    bdParents.put(move.getValue(), move.getKey()); 
-			    bqueue.add(move.getValue());
-			}
+						bdParents.put(move.getValue(), move.getKey()); 
+						bqueue.add(move.getValue());
+					}
 
-				// Same state found in search from both ends
-			if(fdParents.containsKey(move.getValue())) {
+					// Same state found in search from both ends
+					if(fdParents.containsKey(move.getValue())) {
 
-			    String endpath = path(move.getValue(), fdParents);
-			    String srcpath = path(move.getValue(), bdParents);
-			    srcpath = reverse(srcpath);
-			    String solutionPath = srcpath + " " + endpath;
-			    return solutionPath.replaceAll("(([RUF])'?) \\1", "$22");
-			}
-	              }
-	           }
-         	}
-	    
-	    	return "NO SOLUTION POSSIBLE!! IMPOSSIBLE CONFIGURATION!!";
+						String endpath = path(move.getValue(), fdParents);
+						String srcpath = path(move.getValue(), bdParents);
+						srcpath = reverse(srcpath);
+						String solutionPath = srcpath + " " + endpath;
+						return solutionPath.replaceAll("(([RUF])'?) \\1", "$22");
+					}
+	            }
+	        }
+        }
+		
+	    return "NO SOLUTION POSSIBLE!! IMPOSSIBLE CONFIGURATION!!";
 	}
 	
-
 	private static String reverse(String path) {
 
 		path += " ";
 		String reverse = "";
 	    
-        	for(int i = 0; i < path.length(); i++) {
+		for(int i = 0; i < path.length(); i++) {
 
 			if(path.charAt(i) == ' ') { reverse += "' "; }
-		    	else if(path.charAt(i) != '\'') { reverse += path.charAt(i); }
-            		else { reverse += " "; i++; }
-        	}
+			else if(path.charAt(i) != '\'') { reverse += path.charAt(i); }
+			else { reverse += " "; i++; }
+		}
         
 		String str[] = reverse.split(" ");
 		for(int i = 0; i < str.length / 2; i++) {
@@ -97,23 +97,20 @@ public class Main {
 		    str[str.length - 1 - i] = temp;
 		}
         
-        	return String.join(" ", str);
+        return String.join(" ", str);
 	}
 	
-
 	private static String path(RubiksConfiguration state, HashMap<RubiksConfiguration, String> parents) {
 
-	    	String path = parents.get(state);
-        	RubiksConfiguration next = new RubiksConfiguration(state.positions);
-        	next.moveInSequence(path);
+		String path = parents.get(state);
+		RubiksConfiguration next = new RubiksConfiguration(state.positions);
+		next.moveInSequence(path);
         
-        	while (parents.get(next) != null) {
-
-		    path += " " + parents.get(next);
-		    next = new RubiksConfiguration(state.positions);
-		    next.moveInSequence(path);
-        	}
-        
-        	return path;
+		while (parents.get(next) != null) {
+			path += " " + parents.get(next);
+			next = new RubiksConfiguration(state.positions);
+			next.moveInSequence(path);
+		}
+        return path;
 	}
 }	
