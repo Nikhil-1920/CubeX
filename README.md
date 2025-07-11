@@ -1,7 +1,7 @@
 # 🎲 CubeX: Master the 2x2 Cube with Ease
 
 <div align="center">
-  <img src="Images/cubex_logo.png" alt="CubeX Logo" width="200"/>
+  <img src="images/cubex_logo.png" alt="CubeX Logo" width="200"/>
   <p><em>The Ultimate 2x2x2 Rubik's Cube Solver</em></p>
 </div>
 
@@ -224,7 +224,7 @@ Think of CubeX as a smart GPS that finds the shortest route by checking both you
 
 ## 🤝 Contributing
 
-We welcome contributions to make CubeX even better! 
+Welcomes contributions to make CubeX even better! 
 
 ### 📋 **How to Contribute**
 1. 🍴 Fork the repository
@@ -240,16 +240,10 @@ We welcome contributions to make CubeX even better!
 
 ---
 
-## 📄 License
-
-**CubeX** is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details. 📜
-
----
-
 ## 🙏 Acknowledgments
 
 - 👨‍🏫 **Dr. Prem Nath** - Project supervisor and guidance
-- 👨‍💻 **Nikhil Singh** - Developer and B.Tech student at HNBGU
+- 👨‍💻 **Nikhil Singh**  - Developer and B.Tech student at HNBGU
 - 📚 **Resources:**
   - 🔢 The Mathematics of the Rubik's Cube
   - 🎓 You Can Do The Cube
@@ -258,21 +252,3 @@ We welcome contributions to make CubeX even better!
 
 ---
 
-<div align="center">
-  <h2>🎲 Master the Pocket Cube with CubeX!</h2>
-  <p><strong>Fast • Free • Fun</strong></p>
-  <p>⭐ Star the repo and join the cubing revolution! ⭐</p>
-</div>
-
----
-
-## 🎯 Key Changes Made:
-
-1. **🎬 Added Prominent Demo Section**: Featured the animated GIF right after the introduction with proper title and description
-2. **🔗 Cross-References**: Added references to the demo in the "How CubeX Works" section
-3. **📝 Enhanced Context**: Explained what the demo shows (input, solve, result phases)
-4. **💡 Usage Tips**: Added tip referencing the animated demo in the usage guide
-5. **📁 Updated Directory Structure**: Added note about the demo GIF being featured
-6. **🎨 Visual Flow**: Positioned the demo strategically for maximum impact
-
-The animated demo now serves as a powerful visual introduction that immediately shows users what CubeX can do, making the documentation much more engaging and easier to understand!
