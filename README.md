@@ -1,7 +1,7 @@
 # 🎲 CubeX: Master the 2x2 Cube with Ease
 
 <div align="center">
-  <img src="Images/cubex_logo.jpg" alt="CubeX Logo" width="200"/>
+  <img src="images/cubex_logo.jpg" alt="CubeX Logo" width="200"/>
   <p><em>The Ultimate 2x2x2 Rubik's Cube Solver</em></p>
 </div>
 
@@ -23,7 +23,7 @@
 
 ### **CubeX: A Pocket Cube Solver**
 <div align="center">
-  <img src="Images/cubex.gif" alt="CubeX Demo Animation" width="600"/>
+  <img src="images/cubex.gif" alt="CubeX Demo Animation" width="600"/>
   <p><em>Watch CubeX solve a scrambled 2x2x2 cube in real-time!</em></p>
 </div>
 
