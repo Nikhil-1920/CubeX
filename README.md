@@ -78,7 +78,7 @@ The animated demo above shows the complete workflow:
 
 | Advantage | CubeX | Traditional Methods |
 |-----------|-------|-------------------|
-| **Move Count** | ≤14 moves ⚡ | Up to 200 moves 🐌 |
+| **Move Count** | ≤ 14 moves ⚡ | Up to 200 moves 🐌 |
 | **User Interface** | Intuitive 2D net 🎨 | Complex notation 📝 |
 | **Learning Curve** | Beginner-friendly 🔰 | Steep learning curve 📈 |
 | **Performance** | Lightweight & fast 🚀 | Resource intensive 💻 |
